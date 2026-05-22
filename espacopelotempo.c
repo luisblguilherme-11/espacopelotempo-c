@@ -25,6 +25,6 @@ int main() {
 
     printf("Espaco percorrido: %.2f\n", espaco);
 
-    printf("Criado por Thiago Bonfanti Guimarães");
+    printf("Criado por Luís Guilherme");
     return 0;
 }
