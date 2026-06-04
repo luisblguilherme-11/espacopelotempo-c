@@ -1,30 +1,29 @@
 #include <stdio.h>
-#include "function_espacopelotempo.c"
 
-int main() {
-    double velocidade, tempo, aceleracao;
-    char resposta;
+float espacopelotempo(float velocidade, float tempo, float aceleracao);
 
-    printf("Digite a velocidade: ");
-    scanf("%lf", &velocidade);
+int main()
+{
+    float v, t, a = 0;
+    int resposta;
 
-    printf("Digite o tempo: ");
-    scanf("%lf", &tempo);
+    printf("Velocidade: ");
+    scanf("%f", &v);
 
-    printf("Ha aceleracao? (s/n): ");
-    scanf(" %c", &resposta);
+    printf("Tempo: ");
+    scanf("%f", &t);
 
-    double espaco;
-    if (resposta == 's' || resposta == 'S') {
-        printf("Digite a aceleracao: ");
-        scanf("%lf", &aceleracao);
-        espaco = calcularEspacoComAceleracao(velocidade, tempo, aceleracao);
-    } else {
-        espaco = calcularEspaco(velocidade, tempo);
+    printf("Ha aceleracao? (1=Sim 0=Nao): ");
+    scanf("%d", &resposta);
+
+    if(resposta == 1) {
+        printf("Aceleracao: ");
+        scanf("%f", &a);
     }
 
-    printf("Espaco percorrido: %.2f\n", espaco);
+    printf("Espaco = %.2f\n", espacopelotempo(v, t, a));
 
-    printf("Criado por Luís Guilherme");
+    printf("\nFeito por Luís Guilherme ( https://github.com/luisblguilherme-11 ) ");
+
     return 0;
 }
