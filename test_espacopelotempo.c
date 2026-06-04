@@ -1,18 +1,18 @@
 #include <stdio.h>
-#include "function_espacopelotempo.c"
+#include <assert.h>
 
-int main() {
-    printf("Testando espaco pelo tempo:\n");
+float espacopelotempo(float velocidade, float tempo, float aceleracao);
 
-    // Sem aceleracao: v=80, t=2 => S = 160
-    printf("S(v=80, t=2) = %.2f\n", calcularEspaco(80, 2));
+int main()
+{
 
-    // Sem aceleracao: v=40, t=2 => S = 80
-    printf("S(v=40, t=2) = %.2f\n", calcularEspaco(40, 2));
+    assert(espacopelotempo(80, 2, 0) == 160);
+    assert(espacopelotempo(40, 2, 0) == 80);
+    assert(espacopelotempo(40, 2, 3) == 86);
 
-    // Com aceleracao: v=40, t=2, a=3 => S = (40*2) + (3*4)/2 = 80 + 6 = 86
-    printf("S(v=40, t=2, a=3) = %.2f\n", calcularEspacoComAceleracao(40, 2, 3));
+    printf("Todos os testes passaram!\n");
 
-    printf("Criado por Luís Guilherme");
+    printf("\nFeito por Luís Guilherme ( https://github.com/luisblguilherme-11 ) ");
+
     return 0;
 }
